@@ -10,4 +10,6 @@ public interface UserService {
     List<User> listUsers();
 
     void deleteAllUsers();
+
+    User findUser(String model, int series);
 }

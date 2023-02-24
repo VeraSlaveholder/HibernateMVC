@@ -2,6 +2,7 @@ package hiber.service;
 
 import hiber.dao.CarDao;
 import hiber.model.Car;
+import hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,5 +25,11 @@ public class CarServiceImpl implements CarService {
     @Transactional(readOnly = true)
     public List<Car> listCars() {
         return carDao.listCars();
+    }
+
+    @Transactional
+    @Override
+    public void deleteAllCars() {
+        carDao.deleteAllCars();
     }
 }
